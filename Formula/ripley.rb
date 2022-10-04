@@ -5,21 +5,21 @@
 class Ripley < Formula
   desc "Replays HTTP traffic at multiples of the original rate"
   homepage "https://github.com/loveholidays/ripley"
-  version "0.0.4"
+  version "0.0.5"
   license "GPL-3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/loveholidays/ripley/releases/download/v0.0.4/ripley_0.0.4_Darwin_x86_64.tar.gz"
-      sha256 "62747b42fe6613b878a5ac9abd11cda2ab14b14db59588e8d8093f946bfc8cd8"
+    if Hardware::CPU.arm?
+      url "https://github.com/loveholidays/ripley/releases/download/v0.0.5/ripley_0.0.5_Darwin_arm64.tar.gz"
+      sha256 "7b733d390c14a07dfd5865b83be55e6f09b91f59bdd222846269380e1fb4b97b"
 
       def install
         bin.install "ripley"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/loveholidays/ripley/releases/download/v0.0.4/ripley_0.0.4_Darwin_arm64.tar.gz"
-      sha256 "4c38359bf347f12d788791f9f81aeaa1ee9d134aa5cad59a0528d5ff7771c896"
+    if Hardware::CPU.intel?
+      url "https://github.com/loveholidays/ripley/releases/download/v0.0.5/ripley_0.0.5_Darwin_x86_64.tar.gz"
+      sha256 "717a33f6297d0089dfcb4d91bdd618ee114ee4941cac6fb9c9dcd3fab07105b2"
 
       def install
         bin.install "ripley"
@@ -28,17 +28,17 @@ class Ripley < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/loveholidays/ripley/releases/download/v0.0.4/ripley_0.0.4_Linux_arm64.tar.gz"
-      sha256 "a0248842c7b12d9c3f16ce570ce1bf667706e327e0fcc2a7cc110178a6f71b59"
+    if Hardware::CPU.intel?
+      url "https://github.com/loveholidays/ripley/releases/download/v0.0.5/ripley_0.0.5_Linux_x86_64.tar.gz"
+      sha256 "a2d01d965bcdf377c6cd41ed23006be26864f84a8c6e396b9ddaca111891767f"
 
       def install
         bin.install "ripley"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/loveholidays/ripley/releases/download/v0.0.4/ripley_0.0.4_Linux_x86_64.tar.gz"
-      sha256 "ffa9ba48cc52f3df1b1f81affe62c0c89037cfc6edfdafe722dea37d6d80bac0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/loveholidays/ripley/releases/download/v0.0.5/ripley_0.0.5_Linux_arm64.tar.gz"
+      sha256 "66f0312218d0fcba24c064f1a08d862650d97fc1a459dfa9dac0468ff8f2ef33"
 
       def install
         bin.install "ripley"
