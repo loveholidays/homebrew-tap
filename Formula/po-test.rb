@@ -6,12 +6,12 @@ class PoTest < Formula
   desc "CLI to run unit tests against prometheus-operator manifests"
   homepage "https://github.com/loveholidays/po-test"
   version "0.2.0"
-  license "MIT"
+  license "LGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_darwin_amd64.tar.gz"
-      sha256 "5c95c32ad0f0596f7b36ce933aea33d2bd0f6df6ab1a125bdf636d79f622e2eb"
+      sha256 "6fb3a524a3e121c315962a22189c0ec9e0467c3410561ff94586b7c93969de54"
 
       def install
         bin.install "po-test"
@@ -19,7 +19,7 @@ class PoTest < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_darwin_arm64.tar.gz"
-      sha256 "41ffddd81706ac062b7230b5722d2eef55065d761a60f29934c7c7e58d1a0da5"
+      sha256 "ae2a0205ba1ebe64a633a814162784acd32470c931513d050d439ba2da8cbd33"
 
       def install
         bin.install "po-test"
@@ -30,7 +30,7 @@ class PoTest < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_linux_arm64.tar.gz"
-      sha256 "c32f0ca250c0b62a841c3d01f960f25fa95dac7f91cd9884ea2995666f19f02c"
+      sha256 "2db79886310ab37bdfefa54bb1ea202c2290f7411871bdf1ba939121504df18e"
 
       def install
         bin.install "po-test"
@@ -38,7 +38,7 @@ class PoTest < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_linux_amd64.tar.gz"
-      sha256 "4f5e5421f83adbedb0522afd8211558cf82da5fc283ab6a985c76b6777f35d03"
+      sha256 "84f66ef4059252d21fd9fbaed59ea450d68d50436ff793ac145be4b827d600d8"
 
       def install
         bin.install "po-test"
