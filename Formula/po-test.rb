@@ -5,21 +5,21 @@
 class PoTest < Formula
   desc "CLI to run unit tests against prometheus-operator manifests"
   homepage "https://github.com/loveholidays/po-test"
-  version "0.2.0"
+  version "0.3.0"
   license "LGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_darwin_amd64.tar.gz"
-      sha256 "6fb3a524a3e121c315962a22189c0ec9e0467c3410561ff94586b7c93969de54"
+      url "https://github.com/loveholidays/po-test/releases/download/v0.3.0/po-test_0.3.0_darwin_amd64.tar.gz"
+      sha256 "ab7b23a097e898b17c4d3977c0534d5ffd6a8570471411ab2ede630ccfaee026"
 
       def install
         bin.install "po-test"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_darwin_arm64.tar.gz"
-      sha256 "ae2a0205ba1ebe64a633a814162784acd32470c931513d050d439ba2da8cbd33"
+      url "https://github.com/loveholidays/po-test/releases/download/v0.3.0/po-test_0.3.0_darwin_arm64.tar.gz"
+      sha256 "6429aaee42242c6c8e8cbca6a60c3b89895ab6bfff7d286ddcff784dbbf4823c"
 
       def install
         bin.install "po-test"
@@ -29,16 +29,16 @@ class PoTest < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_linux_arm64.tar.gz"
-      sha256 "2db79886310ab37bdfefa54bb1ea202c2290f7411871bdf1ba939121504df18e"
+      url "https://github.com/loveholidays/po-test/releases/download/v0.3.0/po-test_0.3.0_linux_arm64.tar.gz"
+      sha256 "14efbff9fb542834bdbbb6fe1a1e626db3966dbc2323845a23442c0b849e96e3"
 
       def install
         bin.install "po-test"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/loveholidays/po-test/releases/download/v0.2.0/po-test_0.2.0_linux_amd64.tar.gz"
-      sha256 "84f66ef4059252d21fd9fbaed59ea450d68d50436ff793ac145be4b827d600d8"
+      url "https://github.com/loveholidays/po-test/releases/download/v0.3.0/po-test_0.3.0_linux_amd64.tar.gz"
+      sha256 "8318e37163cb480297d7d67f6b0e84d56cfc2deaeaac2469b52a4a928c174521"
 
       def install
         bin.install "po-test"
