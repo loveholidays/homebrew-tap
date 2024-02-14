@@ -13,7 +13,7 @@ class Lvh < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "49433a28a9daa5047be2222fb931349af14a07cb31dd4bc2d5e2be37306e853b"
+      sha256 "da62d3a0c5d43846e5dd1759867fe481d5edf41d071b90b1656ceaf80df0c501"
 
       def install
         bin.install "lvh"
@@ -21,7 +21,7 @@ class Lvh < Formula
     end
     if Hardware::CPU.arm?
       url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "c22f85a9e90b32fd8d31f98022912001a1a06f98581391fea583b1076df86293"
+      sha256 "dbb70f774c3de01794a011339e82d43bf549ae7bd6a26c28c96a0d84f19810c3"
 
       def install
         bin.install "lvh"
@@ -32,7 +32,7 @@ class Lvh < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "4af7c9225bb2915e5de345125c9e6f9a9254d773a22520eb8ab40a82956464c3"
+      sha256 "c436ba7abc206b93d4ec65360373f4b4b92f811dd3a8aac2d0e8821fd659fc3d"
 
       def install
         bin.install "lvh"
@@ -40,7 +40,7 @@ class Lvh < Formula
     end
     if Hardware::CPU.intel?
       url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "82a81bca2bc4bcd540e0b543d5b2bc0c2da5ea07895a89ad85702930ec466760"
+      sha256 "966175c80ca932b34ab3046114dfcec3d781e9106f456621b3c38861045d0d5d"
 
       def install
         bin.install "lvh"
