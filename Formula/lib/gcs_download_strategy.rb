@@ -34,7 +34,12 @@ class GcsDownloadStrategy < CurlDownloadStrategy
     bucket = @bucket
     destination = cached_location
     gsutil_path = "${HOMEBREW_GSUTIL_PATH}"
-    fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
+
+    if File.exist?(gsutil_path)
+      fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
+    else
+      raise "'HOMEBREW_GSUTIL_PATH' is not set. Please set it to the path of the 'gsutil' binary"
+    end
 
   end
 end
