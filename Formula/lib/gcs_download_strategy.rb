@@ -8,7 +8,7 @@ def fetch_with_gsutil(gsutil_path:, bucket:, binary_path:, destination:)
   if status.success?
     puts "Successfully downloaded: #{binary_path}"
   else
-    puts "make sure 'HOMEBREW_GSUTIL_PATH' is set to the path of the 'gsutil' binary"
+    puts "Please run 'export HOMEBREW_GSUTIL_PATH=$(which gsutil)' before trying again"
     puts "Error downloading #{binary_path}: #{stderr}"
     raise "Failed to download with gsutil. Exit status: #{status.exitstatus}"
   end
