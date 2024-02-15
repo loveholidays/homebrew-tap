@@ -8,6 +8,7 @@ def fetch_with_gsutil(gsutil_path:, bucket:, binary_path:, destination:)
   if status.success?
     puts "Successfully downloaded: #{binary_path}"
   else
+    puts "make sure 'HOMEBREW_GSUTIL_PATH' is set to the path of the 'gsutil' binary"
     puts "Error downloading #{binary_path}: #{stderr}"
     raise "Failed to download with gsutil. Exit status: #{status.exitstatus}"
   end
@@ -33,15 +34,8 @@ class GcsDownloadStrategy < CurlDownloadStrategy
     binary_path = @binary_path
     bucket = @bucket
     destination = cached_location
-    gsutil_path = "/opt/homebrew/bin/gsutil"
-
-    if File.exist?(gsutil_path)
-      fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
-    else
-      command = "/opt/homebrew/bin/brew install --cask google-cloud-sdk"
-      command! "/bin/bash", args: ["-c", command]
-      fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
-    end
+    gsutil_path = "${HOMEBREW_GSUTIL_PATH}"
+    fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
 
   end
 end
