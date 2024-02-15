@@ -33,15 +33,8 @@ class GcsDownloadStrategy < CurlDownloadStrategy
     binary_path = @binary_path
     bucket = @bucket
     destination = cached_location
-    gsutil_path = "/opt/homebrew/bin/gsutil"
-
-    if File.exist?(gsutil_path)
-      fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
-    else
-      command = "/opt/homebrew/bin/brew install --cask google-cloud-sdk"
-      command! "/bin/bash", args: ["-c", command]
-      fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
-    end
+    gsutil_path = "${HOMEBREW_GSUTIL_PATH}"
+    fetch_with_gsutil(gsutil_path: gsutil_path, bucket: bucket, binary_path: binary_path, destination: destination)
 
   end
 end
