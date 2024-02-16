@@ -6,22 +6,22 @@ require_relative "lib/gcs_download_strategy"
 class Lvh < Formula
   desc "Loveholidays CLI, help your automate your day to day tasks in Loveholidays"
   homepage "https://github.com/loveholidays/lvh"
-  version "0.0.1"
+  version "0.0.2"
 
   depends_on "google-cloud-sdk" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "da62d3a0c5d43846e5dd1759867fe481d5edf41d071b90b1656ceaf80df0c501"
+      url "gs://lh-homebrew-bin/lvh/v0.0.2/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
+      sha256 "c7973d5fc0bb15133ad1d392b4cd9e43b140057d8e169af73ff010de8cfd0806"
 
       def install
         bin.install "lvh"
       end
     end
     if Hardware::CPU.arm?
-      url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "dbb70f774c3de01794a011339e82d43bf549ae7bd6a26c28c96a0d84f19810c3"
+      url "gs://lh-homebrew-bin/lvh/v0.0.2/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
+      sha256 "9f53b0b5d0d01bcb609babc689a42d54d8a1b4ef3cca78c94a0b93a0b79b2568"
 
       def install
         bin.install "lvh"
@@ -30,17 +30,17 @@ class Lvh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "c436ba7abc206b93d4ec65360373f4b4b92f811dd3a8aac2d0e8821fd659fc3d"
+    if Hardware::CPU.intel?
+      url "gs://lh-homebrew-bin/lvh/v0.0.2/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
+      sha256 "562b0d4477128eb23296d63ff108e678f35c1f7eaf73bd735aa4404b484d281e"
 
       def install
         bin.install "lvh"
       end
     end
-    if Hardware::CPU.intel?
-      url "gs://lh-homebrew-bin/lvh/v0.0.1/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "966175c80ca932b34ab3046114dfcec3d781e9106f456621b3c38861045d0d5d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "gs://lh-homebrew-bin/lvh/v0.0.2/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
+      sha256 "279e16bb9c220d6d90fce765cacc837b0d6940f9b621d5c30f17501425eb87ec"
 
       def install
         bin.install "lvh"
