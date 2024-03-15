@@ -9,17 +9,17 @@ class Lvh < Formula
   version "0.0.14"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "d5b3caa7cd4240fe1ca2569caa3e8e75e778c735556e436759d79f3f21c87bcb"
+    if Hardware::CPU.arm?
+      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
+      sha256 "db9f054bb880eb5b8ab398f720600b913ca16b8233c32f3e6b7bfe5806e49fe1"
 
       def install
         bin.install "lvh"
       end
     end
-    if Hardware::CPU.arm?
-      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "15bd00b63880547bddf0a9ead88ae3ffa636d4f78b96c4c4742928cac6facc3a"
+    if Hardware::CPU.intel?
+      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
+      sha256 "28ca2ccf49267420df2e1644efce4a7ca6e6b0003cdeb755982258be3791d453"
 
       def install
         bin.install "lvh"
@@ -28,17 +28,17 @@ class Lvh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "3abf504fdcef666bdcd69861deeda1219e0a1dd36bb3740a028d52bba35fd7c1"
+    if Hardware::CPU.intel?
+      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
+      sha256 "10280f55a08e9c0a41607366ff52d28255f09eca3a98646dfefb9f2a17fff598"
 
       def install
         bin.install "lvh"
       end
     end
-    if Hardware::CPU.intel?
-      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "e058bf4e07ff3f91936180b6c4e0c3b827196832c5d407067f57d179128de83d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "gs://lh-homebrew-bin/lvh/v0.0.14/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
+      sha256 "374242fd59c4833d43309f3c8673e6f6ecebf3c79d961214745be29e1aa01203"
 
       def install
         bin.install "lvh"
