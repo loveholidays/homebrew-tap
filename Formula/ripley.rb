@@ -5,21 +5,21 @@
 class Ripley < Formula
   desc "Replays HTTP traffic at multiples of the original rate"
   homepage "https://github.com/loveholidays/ripley"
-  version "0.1.2"
+  version "0.1.3"
   license "GPL-3.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/loveholidays/ripley/releases/download/v0.1.2/ripley_Darwin_x86_64.tar.gz"
-      sha256 "b06a7f9fc511c99c7ec41d295a070408331e2d40e7e8a50b91625bf577beabd8"
+      url "https://github.com/loveholidays/ripley/releases/download/v0.1.3/ripley_Darwin_x86_64.tar.gz"
+      sha256 "413eeb86536087ef2535fc1b327904d4189bb255a7229d113c8dbec789e4f238"
 
       def install
         bin.install "ripley"
       end
     end
     on_arm do
-      url "https://github.com/loveholidays/ripley/releases/download/v0.1.2/ripley_Darwin_arm64.tar.gz"
-      sha256 "e4d7fd2861725a335306404726f844e55b61c83f78447e7f5fc6d0c8abbd86db"
+      url "https://github.com/loveholidays/ripley/releases/download/v0.1.3/ripley_Darwin_arm64.tar.gz"
+      sha256 "7d7d917b041410a88e1c4414d416903738d728a89c57649839c9d234e312dfc3"
 
       def install
         bin.install "ripley"
@@ -30,8 +30,8 @@ class Ripley < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/loveholidays/ripley/releases/download/v0.1.2/ripley_Linux_x86_64.tar.gz"
-        sha256 "7d74fbd052e1160e3e91923cb34da3d407c4b05e1241a06e0bb7e3b359861ad2"
+        url "https://github.com/loveholidays/ripley/releases/download/v0.1.3/ripley_Linux_x86_64.tar.gz"
+        sha256 "7c60b0daa227111f721f7602484d756a80d2642881f9859678544f0ddc714745"
 
         def install
           bin.install "ripley"
@@ -40,8 +40,8 @@ class Ripley < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/loveholidays/ripley/releases/download/v0.1.2/ripley_Linux_arm64.tar.gz"
-        sha256 "ee902c7a2e732b012ced2914d173dee7401da87599fd235a80b2d723a3451368"
+        url "https://github.com/loveholidays/ripley/releases/download/v0.1.3/ripley_Linux_arm64.tar.gz"
+        sha256 "d75afe86febb66d85e2a9313fc0bc07d80e286b378d0faa5a8e033ab8db802f9"
 
         def install
           bin.install "ripley"
