@@ -6,20 +6,20 @@ require_relative "lib/gcs_download_strategy"
 class Lvh < Formula
   desc "Loveholidays CLI, help your automate your day to day tasks in Loveholidays"
   homepage "https://github.com/loveholidays/lvh"
-  version "0.0.24"
+  version "0.0.26"
 
   on_macos do
     on_intel do
-      url "gs://lh-homebrew-bin/lvh/v0.0.24/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
-      sha256 "989ed967fab917ee01af61221f0b37514409f4123149d34052cca6d2b32f970d"
+      url "gs://lh-homebrew-bin/lvh/v0.0.26/lvh_darwin_x86_64.tar.gz", using: GcsDownloadStrategy
+      sha256 "110d8dbbec317ae77f5aaa137bcd5d5e251be644cc8be8a30c18a43717f437e3"
 
       def install
         bin.install "lvh"
       end
     end
     on_arm do
-      url "gs://lh-homebrew-bin/lvh/v0.0.24/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
-      sha256 "62627a9181f54eaccc9daffe6b0d1d21e559fb19ea94ca0a3968f719d305cce1"
+      url "gs://lh-homebrew-bin/lvh/v0.0.26/lvh_darwin_arm64.tar.gz", using: GcsDownloadStrategy
+      sha256 "11d8326e5307899f788b11f6429e642645647aa30e77fa1f4a0f58f865a9b68b"
 
       def install
         bin.install "lvh"
@@ -30,8 +30,8 @@ class Lvh < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "gs://lh-homebrew-bin/lvh/v0.0.24/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
-        sha256 "f995121307860ead15f568ffc8fbefa9205457c51ddc84dfaa81107b5fef7f90"
+        url "gs://lh-homebrew-bin/lvh/v0.0.26/lvh_linux_x86_64.tar.gz", using: GcsDownloadStrategy
+        sha256 "37d491add63b5de72567b5649b6120363690d491248af432151bb9d4948b51f0"
 
         def install
           bin.install "lvh"
@@ -40,8 +40,8 @@ class Lvh < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "gs://lh-homebrew-bin/lvh/v0.0.24/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
-        sha256 "424cfa883f33af168fe218c0141d7e5a2bbffc0c0f45bc6cd8ded9a1960b4151"
+        url "gs://lh-homebrew-bin/lvh/v0.0.26/lvh_linux_arm64.tar.gz", using: GcsDownloadStrategy
+        sha256 "e3b1fc86ce14130671db0f1014fca9432c0600e8a5e8348d48de88c7ed1d9b3d"
 
         def install
           bin.install "lvh"
